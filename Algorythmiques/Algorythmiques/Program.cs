@@ -10,6 +10,18 @@ namespace Algorythmiques
     {
         static void Main(string[] args)
         {
+
+
+        }
+        private static int GereMenu(List<string> menu)
+        {
+            foreach (string ligne in menu)
+            {
+                Console.WriteLine(ligne);
+            }
+            int choix;
+            choix = int.Parse(Console.ReadLine());
+            return choix;
         }
     }
 }
