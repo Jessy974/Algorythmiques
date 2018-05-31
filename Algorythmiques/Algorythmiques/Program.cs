@@ -47,8 +47,10 @@ namespace Algorythmiques
                     return Choix;
                 }
             }
+
             Console.WriteLine("Erreur lors de la saisie");
             return -1;
+            //return menu.SingleOrDefault(x=>x.Numero==Choix) != null ? choix : -1;
         }
     }
 
