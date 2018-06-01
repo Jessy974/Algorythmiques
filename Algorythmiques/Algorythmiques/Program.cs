@@ -77,12 +77,6 @@ namespace Algorythmiques
             //return menu.SingleOrDefault(x=>x.Numero==Choix) != null ? choix : -1;
         }
     }
-    class Menu
-    {
-
-
-
-    }
-
+   
 
 }
