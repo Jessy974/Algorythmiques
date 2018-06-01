@@ -20,11 +20,11 @@ namespace Algorythmiques.MenuPreso
     /// </summary>
     class Menu
     {
-        private List<MenuItem>lignes;
+        private List<MenuItem> lignes;
 
         public Menu()
         {
-           lignes= new List<MenuItem>();
+            lignes = new List<MenuItem>();
         }
         /// <summary>
         /// Insère un MenuItem dans le menu.
@@ -32,8 +32,8 @@ namespace Algorythmiques.MenuPreso
         /// </summary>
         /// <param name="item"> element à insérer dans le menu</param>
         /// <exception cref="ArgumentException">si le numéro de l'item est déjà présent dans le menu</exception>
-        public void InsererLigne (MenuItem ligne)
-              
+        public void InsererLigne(MenuItem ligne)
+
         {
             /*foreach (MenuItem numero in lignes)
             {
@@ -45,7 +45,7 @@ namespace Algorythmiques.MenuPreso
                 }
                
             }*/
-            if (lignes.Exists(x=>x.Numero==ligne.Numero))
+            if (lignes.Exists(x => x.Numero == ligne.Numero))
             {
                 throw new ArgumentException
                     ($"Le numéro {ligne.Numero} existe déjà dans le menu");
@@ -58,10 +58,11 @@ namespace Algorythmiques.MenuPreso
         /// </summary>
         public void Afficher()
         {
-          
+            Console.Clear();
+
             foreach (MenuItem ligne in lignes)
             {
-                Console.WriteLine(ligne);
+                Console.WriteLine($"{ligne.Numero} {ligne.Libelle}");
             }
         }
 
@@ -71,7 +72,7 @@ namespace Algorythmiques.MenuPreso
             Console.WriteLine("Saisir un choix");
             int choix;
             choix = int.Parse(Console.ReadLine());
-          
+
 
             //test du choix par rapport aux elements du menu
             foreach (MenuItem ligne in lignes)
@@ -93,5 +94,43 @@ namespace Algorythmiques.MenuPreso
             Console.WriteLine("Erreur lors de la saisie");
             return -1;
         }
+    
+      
+    }
+    /// <summary>
+    /// création d'une classe sous menu ayant les mêmes items
+    /// </summary>
+    class SousMenu
+    {
+        private List<SousMenu> sousMenus;
+
+        public SousMenu()
+        {
+           sousMenus  = new List<SousMenu>();
+        }
+    }
+        
+    public class Dossier
+    {
+        public void AfficherMenuDossier()
+        {
+          
+        }
+    }
+    public class Voyage
+    {
+        public void AfficherMenuVoyage()
+        {
+            
+
+        }
+    }
+    public class Client
+    {
+        public void AfficherMenuClient()
+        {
+          
+        }
+
     }
 }
